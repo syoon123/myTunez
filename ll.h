@@ -1,6 +1,3 @@
-//#ifndef LL_H
-//#define LL_H
-
 typedef struct song_node {
   char *name;
   char *artist;
@@ -27,4 +24,4 @@ song_node * remove_song(  song_node *l, char *name );
 
 song_node * free_list(  song_node *l ); 
 
-//#endif
+
