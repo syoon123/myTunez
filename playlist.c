@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "ll.h"
 #include "playlist.h"
 
 void add_song( char *name, char *artist ) {

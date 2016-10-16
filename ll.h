@@ -1,3 +1,6 @@
+#ifndef LL_H
+#define LL_H
+
 typedef struct song_node {
   char *name;
   char *artist;
@@ -23,3 +26,5 @@ struct song_node * random_song ( struct song_node *l );
 struct song_node * remove_song( struct song_node *l, char *name );
 
 struct song_node * free_list( struct song_node *l ); 
+
+#endif
