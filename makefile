@@ -1,7 +1,10 @@
 GCC = gcc -g
 
-all: playlist.o A.o
-	$(GCC) playlist.o A.o -o playlisttest
+all: ll.o playlist.o A.o
+	$(GCC) playlist.o A.o ll.o -o playlisttest
+
+ll.o: ll.c ll.h
+	$(GCC) -c ll.c
 
 playlist.o: playlist.c playlist.h
 	$(GCC) -c playlist.c
