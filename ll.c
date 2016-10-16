@@ -4,20 +4,20 @@
 #include <string.h>
 #include "ll.h"
 
-void print_node( struct song_node *n) {
+void print_node( song_node *n) {
   if (n) {
     printf("%s / %s\n", n->name, n->artist);
   }
 }
 
-void print_list( struct song_node *l ) {
+void print_list( song_node *l ) {
   if (l) {
     print_node(l);
     print_list(l->next);
   }
 }
 
-struct song_node * insert_front( struct song_node *l, char *name, char *artist ) {
+song_node * insert_front( song_node *l, char *name, char *artist ) {
   song_node *new = ( song_node *)malloc(sizeof( song_node));
   new->name = name;
   new->artist = artist;
@@ -25,7 +25,7 @@ struct song_node * insert_front( struct song_node *l, char *name, char *artist )
   return new;
 }
 
- song_node * insert(  song_node *l, char *name, char *artist ) {
+song_node * insert(  song_node *l, char *name, char *artist ) {
   if (l==0) {
     l = insert_front(l, name, artist);
     return l;
