@@ -66,7 +66,7 @@ song_node * insert(  song_node *l, char *name, char *artist ) {
     }
     f = f->next;
   }
-  printf("Artist not found.\n");
+  //printf("Artist not found.\n");
   return 0;
 }
 

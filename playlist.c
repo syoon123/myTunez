@@ -18,6 +18,29 @@ void add_song( char *name, char *artist ) {
   }
 }
 
+song_node * search_Name( char *name ) {
+  char first = name[0];
+  if (first>=48 && first<=57) {
+    return search_name( library[0], name );
+  }
+  else {
+    int k = first - 64;
+    return search_name( library[k], name );
+  }
+}
+
+song_node * search_Artist( char *artist ) {
+  int k = 0;
+  while (k<28) {
+    if (search_artist(library[k], artist)) {
+      return search_artist(library[k], artist);
+    }
+    k++;
+  }
+  printf("Artist not found.\n");
+  return 0;
+}
+
 void print_letter(char letter) {
   if (letter<9) {
     print_list(library[letter]);
@@ -27,3 +50,6 @@ void print_letter(char letter) {
     print_list(library[k]);
   }
 }
+
+
+  
