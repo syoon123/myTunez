@@ -27,6 +27,8 @@ song_node * search_Name( char *name ) {
     int k = first - 64;
     return search_name( library[k], name );
   }
+  printf("Song not found.\n");
+  return 0;
 }
 
 song_node * search_Artist( char *artist ) {
@@ -67,12 +69,19 @@ void print_artist(char *artist) {
 
 void print_library() {
   int k = 0;
+  int empty = 1;
   while (k<28) {
+    if (len(library[k]) > 0) {
+      empty = 0;
+    }
     print_list(library[k]);
     k++;
   }
+  if (empty) {
+    printf("Your library is empty.\n");
+  }
 }
-
+/*
 void add(song_node *lib[], char *name, char *artist) {
   char first = name[0];
   if (first>=48 && first<=57) {
@@ -110,5 +119,22 @@ void shuffle() {
       library[i] = remove_song(library[i], randsong->name);
     }
     i++;
+  }
+}
+*/
+
+void delete_song( char *name ) {
+  int k = 0;
+  while (k<28) {
+    library[k] = remove_song(library[k], name);
+    k++;
+  }
+}
+
+void clear() {
+  int k = 0;
+  while (k<28) {
+    library[k] = free_list(library[k]);
+    k++;
   }
 }

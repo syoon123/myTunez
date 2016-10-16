@@ -17,6 +17,10 @@ int main() {
   
   print_library();
   printf("\n");
-  shuffle();
+
+  delete_song("Paris");
+  print_library();
+  clear();
+  print_library();
   return 0;
 }

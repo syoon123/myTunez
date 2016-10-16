@@ -54,7 +54,7 @@ song_node * insert(  song_node *l, char *name, char *artist ) {
     }
     f = f->next;
   }
-  printf("Song not found.\n");
+  //printf("Song not found.\n");
   return 0;
 }
 
@@ -91,11 +91,11 @@ int len(  song_node *l ) {
 }
 
  song_node * remove_song(  song_node *l, char *name ) {
-   song_node *g = search_name(l, name);
-  if (g==l) {
-    return l->next;
-  }
+  song_node *g = search_name(l, name);
   if (g) {
+    if (g==l) {
+      return l->next;
+    }
     while (l->next != g) {
       l = l->next;
     }
@@ -103,7 +103,7 @@ int len(  song_node *l ) {
     free(g);
     return l;
   }
-  return 0;
+  return l;
 }
 
  song_node * free_list(  song_node *l ) {
