@@ -4,9 +4,9 @@ song_node *library[27]; //A-Z, #
 
 void add_song( char *name, char *artist );
 
-struct song_node * search_Name( char *name );
+song_node * search_Name( char *name );
 
-struct song_node * search_Artist( char *artist );
+song_node * search_Artist( char *artist );
 
 void print_letter( char letter );
 
