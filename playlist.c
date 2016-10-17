@@ -5,7 +5,7 @@
 
 song_node *library[27];
 
-void add_song(char *name, char *artist ) {
+void add_song( char *name, char *artist ) {
   //0 = 48, 9 = 57
   //A = 65, Z = 90
   char first = name[0];
@@ -53,7 +53,7 @@ void print_letter(char letter) {
   }
 }
 
-void print_artist(char *artist) {
+void print_artist( char *artist) {
   int k = 0;
   while (k<28) {
     song_node *curr = library[k];
@@ -81,47 +81,6 @@ void print_library() {
     printf("Your library is empty.\n");
   }
 }
-/*
-void add(song_node *lib[], char *name, char *artist) {
-  char first = name[0];
-  if (first>=48 && first<=57) {
-    lib[0] = insert(lib[0], name, artist);
-  }
-  else {
-    int k = first - 64;
-    lib[k] = insert(lib[k], name, artist);
-  }
-}
-  
-void shuffle() {
-  song_node *library_copy[27];
-  int k = 0;
-  while (k<28) {
-    while (library[k]) {
-      add(library_copy, library[k]->name, library[k]->artist);
-      library[k] = library[k]->next;
-    }
-    k++;
-  }
-  srand(time(NULL));
-  int i = 27;
-  while(i) {
-    int j = rand() % i;
-    song_node *temp = library_copy[j];
-    library_copy[j] = library_copy[i];
-    library_copy[i] = temp;
-    i--;
-  }
-  while(i<28) {
-    while(library[i]) {
-      song_node *randsong = random_song(library[i]);
-      print_node(randsong);
-      library[i] = remove_song(library[i], randsong->name);
-    }
-    i++;
-  }
-}
-*/
 
 void delete_song( char *name ) {
   int k = 0;
@@ -138,3 +97,18 @@ void clear() {
     k++;
   }
 }
+
+void shuffle(int k) {
+srand(time(NULL));  
+  while (k) {
+
+    int r = rand() % 27;
+    if (library[r]) {
+      printf("%d ", r);
+      print_node(random_song(library[r]));
+      k--;
+    }
+  }
+  printf("\n");
+}
+    

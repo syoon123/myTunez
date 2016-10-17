@@ -1,7 +1,6 @@
 #include "ll.h"
 
 void add_song(char *name, char *artist );
-void add(song_node *lib[], char *name, char *artist);
 
 song_node * search_Name( char *name );
 

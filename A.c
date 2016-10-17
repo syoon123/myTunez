@@ -1,26 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "playlist.h"
 
-int main() { 
-  add_song("99 Problems", "Jay Z");
-  add_song("3005","Childish Gambino");
-  add_song("Good as Hell", "Lizzo");
-  add_song("Girls", "The 1979");
-  add_song("Paris", "The 1979");
+int main() {
+  srand(time(NULL));
+  add_song( "99 Problems", "Jay Z");
+  add_song( "3005","Childish Gambino");
+  add_song( "Good as Hell", "Lizzo");
+  add_song( "Girls", "The 1979");
+  add_song( "Paris", "The 1979");
 
-  print_letter('G');
+  print_letter( 'G');
   printf("\n");
-  print_artist("The 1979");
+  print_artist( "The 1979");
   printf("\n");
   
   print_library();
-  printf("\n");
+  printf("\n");  
 
-  delete_song("Paris");
+  shuffle(10);
+  
+  delete_song( "Paris");
   print_library();
   clear();
   print_library();
+  
   return 0;
 }
