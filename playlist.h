@@ -1,3 +1,5 @@
+#ifndef _PLAYLIST_H
+#define _PLAYLIST_H
 #include "ll.h"
 
 void add_song(char *name, char *artist );
@@ -12,8 +14,9 @@ void print_artist( char *artist );
 
 void print_library();
 
-void shuffle();
+void shuffle(int k);
 
 void delete_song( char *name );
 
 void clear();
+#endif

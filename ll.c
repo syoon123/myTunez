@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 #include "ll.h"
 
 void print_node( song_node *n) {
@@ -80,7 +79,6 @@ int len(  song_node *l ) {
 }
 
  song_node * random_song (  song_node *l ) {
-     srand(time(NULL));
   int r = rand() % len(l);
    song_node *f = l;
   while (r) {

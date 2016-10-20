@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
+#include "ll.h"
 #include "playlist.h"
 
 int main() {
-  srand(time(NULL));
   add_song( "99 Problems", "Jay Z");
   add_song( "3005","Childish Gambino");
   add_song( "Good as Hell", "Lizzo");

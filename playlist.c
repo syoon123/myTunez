@@ -99,9 +99,8 @@ void clear() {
 }
 
 void shuffle(int k) {
-srand(time(NULL));  
+  srand(time(NULL));
   while (k) {
-
     int r = rand() % 27;
     if (library[r]) {
       printf("%d ", r);
